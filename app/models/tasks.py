@@ -13,7 +13,7 @@ class Task:
             "created_at": datetime.utcnow()
         }
         # CORRECCIÓN: Usamos mongo.cx.get_database() para evitar errores de conexión
-        result = mongo.cx.get_database().tasks.insert_one(task_doc)
+        result = mongo.db.tasks.insert_one(task_doc) 
         return str(result.inserted_id)
 
     @staticmethod

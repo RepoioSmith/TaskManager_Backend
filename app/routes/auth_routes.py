@@ -47,6 +47,7 @@ def login():
 
 # --- Rutas de Gestión de Usuarios (CRUD Extra) ---
 
+#
 @auth_bp.route('/', methods=['GET'])
 @jwt_required()
 def get_all():

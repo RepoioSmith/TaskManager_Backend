@@ -56,6 +56,7 @@ def update_task(task_id):
         return jsonify({"msg": "No hubo cambios"}), 200
     
 @task_bp.route('/<task_id>', methods=['DELETE'])
+@jwt_required()
 def delete_task(task_id):
     current_user_id=get_jwt_identity()
     task= Task.get_by_id(task_id)
